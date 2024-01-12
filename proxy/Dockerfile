@@ -1,14 +1,13 @@
 FROM nginxinc/nginx-unprivileged:1-alpine
-
 LABEL maintainer="Robert Treharne"
 
 COPY ./default.config.tpl /etc/nginx/default.config.tpl
 COPY ./uwsgi_params /etc/nginx/wsgi_params
 COPY ./run.sh /run.sh
 
-ENV LISTEN_PORT=8080
+ENV LISTEN_PORT=8001
 ENV APP_HOST=app
-ENV APP_PORT=9090
+ENV APP_PORT=9000
 
 USER root
 

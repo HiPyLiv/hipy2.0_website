@@ -1,0 +1,66 @@
+{% extends "front/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<div class="page-section" id="event">
+    <section class="container">
+        <img class="logo" src="{% static 'img/navbar-logo.png' %}" alt="HiPy Logo">
+        <a href="/">< Back</a>
+        <br>
+        <br>
+        <h3>Register for ...</h3>
+        <div class="row">
+            
+ 
+            <div class="col-md-6">
+
+                
+                <div class="event-summary">
+                    <h1>{{ event.name }}</h1>
+                    <p>{{ event.long_description }}</p>
+                    <p><strong>Date: </strong> {{ event.date }}, {{ event.time }}</p>
+                    <p><strong>Location: </strong>{{ event.location }}</p>
+                    <p><strong>Duration: </strong>{{ event.duration }} hrs</p>
+                    <img class="event-thumb reg" src="{{ event.image.url }}" alt="{{ event.name }}">
+                </div>
+                
+            </div>
+
+            <div class="col-md-6">
+
+                
+                <div class="event-summary">
+
+                    {% if thanks %}
+                        <h3>{{ thanks }}</h3>
+                        <p>You're all registered.</p>
+                        <p>We won't send you an email confirmation and promise not to bug you with annoying reminder emails. We trust that you're able to make a note of the date, time and location and arrive in style on the day.</p>
+                        <p>A few bits of advice:</p>
+                        <ul>
+                            <li>Bring your own laptop (and charger) if you have one</li>
+                            <li>Bring a mug for tea/coffee</li>
+                            <li>Keep an eye on our <a href="https://twitter.com/hipyliv" target="_blank">X feed</a> for any extra information ahead of the event</li>
+                        </ul>
+                        <p>We earnestly look forward to meeting you on the day (if we haven't met you already).</p>
+                        <p>See you there!</p>
+                        <p>Rob Treharne</p>
+                    {% else %}
+                        <form class="registration-form" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                    {% endif %}
+              </div>
+                
+            </div>
+            
+
+        </div>
+    </section>
+</div>
+
+{% endblock %}

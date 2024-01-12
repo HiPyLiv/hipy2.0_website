@@ -22,7 +22,7 @@ services:
       - DB_PASS=changeme
     depends_on:
       - db
-    container_name: app-canvas-wizards
+    container_name: app-hipy
 
   db:
     image: postgres:13.2-alpine
@@ -30,7 +30,6 @@ services:
       - POSTGRES_DB=devdb
       - POSTGRES_USER=devuser
       - POSTGRES_PASSWORD=changeme
-    container_name: db-canvas-wizards
-
+    container_name: db-hipy
 
 
