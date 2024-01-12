@@ -118,6 +118,7 @@ footer {
 }
 
 .event {
+    max-width: 30%;
     border: 2px solid white;
     padding: 0px;
     margin: calc((100% - (3 * 30%)) / 6);
@@ -147,6 +148,7 @@ a:hover {
 
 
 .thumb-span img {
+    width:100%;
     max-width: 400px;
 }
 
