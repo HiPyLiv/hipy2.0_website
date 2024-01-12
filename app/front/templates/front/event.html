@@ -37,16 +37,15 @@
                     {% if thanks %}
                         <h3>{{ thanks }}</h3>
                         <p>You're all registered.</p>
-                        <p>We won't send you an email confirmation and promise not to bug you with annoying reminder emails. We trust that you're able to make a note of the date, time and location and arrive in style on the day.</p>
+                        <p>We won't send you an email confirmation. We won't bug you with annoying reminder emails. We expect competent humans to make a note of the date, time and location and arrive in style on the day.</p>
                         <p>A few bits of advice:</p>
                         <ul>
                             <li>Bring your own laptop (and charger) if you have one</li>
                             <li>Bring a mug for tea/coffee</li>
                             <li>Keep an eye on our <a href="https://twitter.com/hipyliv" target="_blank">X feed</a> for any extra information ahead of the event</li>
                         </ul>
-                        <p>We earnestly look forward to meeting you on the day (if we haven't met you already).</p>
+                        <p>The benevolent AI overlords look forward to meeting you on the day (if we haven't met you already).</p>
                         <p>See you there!</p>
-                        <p>Rob Treharne</p>
                     {% else %}
                         <form class="registration-form" method="post" enctype="multipart/form-data">
                             {% csrf_token %}

@@ -182,7 +182,7 @@ img.logo {
 }
 
 /* Make a media query for screens less than 768px wide */
-@media (max-width: 500px) {
+@media (max-width: 994px) {
     .title {
         font-size: 4em;
     }
@@ -207,13 +207,15 @@ img.logo {
     }
 
     .event {
-        margin: calc((100% - (2 * 50%)) / 4);
+        text-align: center;
+        max-width: 90%;
+        margin: calc((100% - (90%)) / 4);
     }
 
     .event-thumb-img {
         width: 100%;
         max-width: 300px;
-        border-bottom: 2px solid white;
+        border: none
     }
 
     .thumb-span img {
